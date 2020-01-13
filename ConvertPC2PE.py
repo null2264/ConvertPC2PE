@@ -1,5 +1,5 @@
 import os
-from blocks import pcfile, pefile
+from blocksPE, blocksPC import pcfile, pefile
 #Variables
 class bcolors:
     HEADER = '\033[95m'
