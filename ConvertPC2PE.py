@@ -12,7 +12,7 @@ class bcolors:
 
 print("Supported Version :", bcolors.BOLD + "PC 1.15.x -> PE 1.14.x.x")
 print(bcolors.WARNING + "WARNING!", bcolors.ENDC + "This converter cant convert shaderpack and optifine required resource pack!")
-inPCResource = str(input("What is the folder name of the Resource Pack ? ") or "ResourcePack")
+inPCResource = str(input("What is the folder name of the Resource Pack ? ") or "BlockinBlock")
 
 pngdir="/home/ziro/my Files/PE Port Project/" + inPCResource + "/assets/minecraft/textures/block/"
 pngdirPE="/home/ziro/my Files/PE Port Project/" + inPCResource + "PE" + "/textures/blocks/"
