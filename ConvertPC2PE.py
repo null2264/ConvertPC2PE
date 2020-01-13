@@ -1,4 +1,5 @@
 import os
+from blocks import pcfile, pefile
 #Variables
 class bcolors:
     HEADER = '\033[95m'
@@ -18,99 +19,22 @@ pngdir="/home/ziro/my Files/PE Port Project/" + inPCResource + "/assets/minecraf
 inPEResource = inPCResource + "PE"
 pngdirPE="/home/ziro/my Files/PE Port Project/" + inPEResource + "/textures/blocks/"
 
-pcfile=["PC Textures' Name Patterns",
-        "acacia_door_bottom.png",
-        "acacia_door_top.png",
-        "acacia_planks.png",
-        "acacia_sapling.png",
-        "acacia_trapdoor.png",
-        "acacia_log.png",
-        "acacia_log_top.png",
-        "activator_rail.png",
-        "activator_rail_on.png",
-        "allium.png",
-        "andesite.png",
-        "anvil.png",
-        "anvil_top.png",
-        "attached_melon_stem.png",
-        "attached_pumpkin_stem.png",
-        "azure_bluet.png",
-        "bamboo_large_leaves.png",
-        "bamboo_singleleaf.png",
-        "bamboo_small_leaves.png",
-        "bamboo_stage0.png",
-        "bamboo_stalk.png",
-        "barrel_bottom.png",
-        "barrel_side.png",
-        "barrel_top.png",
-        "barrel_top_open.png",
-        "beacon.png",
-        "bedrock.png",
-        "bee_nest_bottom.png",
-        "bee_nest_front.png",
-        "bee_nest_front_honey.png",
-        "bee_nest_side.png",
-        "bee_nest_top.png",
-        "beehive_end.png",
-        "beehive_front.png",
-        "beehive_front_honey.png",
-        "beehive_side.png",
-        "beetroots_stage0.png",
-        "beetroots_stage1.png",
-        "beetroots_stage2.png",
-        "beetroots_stage3.png",]
-pefile=["PE Textures' Name Pattern",
-        "door_acacia_lower.png",
-        "door_acacia_upper.png",
-        "planks_acacia.png",
-        "sapling_acacia.png",
-        "acacia_trapdoor.png",
-        "log_acacia.png",
-        "log_acacia_top.png",
-        "rail_activator.png",
-        "rail_activator_powered.png",
-        "flower_allium.png",
-        "stone_andesite.png",
-        "anvil_base.png",
-        "ancil_top_damaged_0.png",
-        "melon_stem_connected.png",
-        "pumpkin_stem_connected.png",
-        "flower_houstonia.png",
-        "bamboo_leaf.png",
-        "bamboo_singleleaf.png",
-        "bamboo_small_leaf.png",
-        "bamboo_sapling.png",
-        "bamboo_stem.png",
-        "barrel_bottom.png",
-        "barrel_side.png",
-        "barrel_top.png",
-        "barrel_top_open.png",
-        "beacon.png",
-        "bedrock.png",
-        "bee_nest_bottom.png",
-        "bee_nest_front.png",
-        "bee_nest_front_honey.png",
-        "bee_nest_side.png",
-        "bee_nest_top.png",
-        "beehive_top.png",
-        "beehive_front.png",
-        "beehive_front_honey.png",
-        "beehive_side.png",
-        "beetroots_stage_0.png",
-        "beetroots_stage_1.png",
-        "beetroots_stage_2.png",
-        "beetroots_stage_3.png",]
+#pcfile = blocks.pcfile
+#pefile = blocks.pefile
 
 input0=1
 error=0
 
 print("")
 print("LOGS:")
+# ---------- Check folders ----------
 if not os.path.exists(pngdirPE):
     os.makedirs(pngdirPE)
 else:
     print("Folder", inPEResource , "already exist, skipped")
     pass
+
+# --------- Rename -----------------
 
 while input0 < len(pcfile):
     try : # Try to do the following commands
@@ -137,4 +61,3 @@ else:
 print("---------------------------------------------")
 # My notes to user
 print("* Leaves will not converted, i haven't figured it out the method to do image proccessing with python... Heck i dont even know if its possible")
-print("* Trapdoors only need to be moved to", pngdirPE)
