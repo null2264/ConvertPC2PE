@@ -22,6 +22,7 @@ pcfile=["PC Textures' Name Patterns",
         "acacia_door_top.png",
         "acacia_planks.png",
         "acacia_sapling.png",
+        "acacia_trapdoor.png",
         "acacia_log.png",
         "acacia_log_top.png",
         "activator_rail.png",
@@ -31,12 +32,23 @@ pcfile=["PC Textures' Name Patterns",
         "anvil.png",
         "anvil_top.png",
         "attached_melon_stem.png",
-        "attached_pumpkin_stem.png",]
+        "attached_pumpkin_stem.png",
+        "azure_bluet.png",
+        "bamboo_large_leaves.png",
+        "bamboo_singleleaf.png",
+        "bamboo_small_leaves.png",
+        "bamboo_stage0.png",
+        "bamboo_stalk.png",
+        "barrel_bottom.png",
+        "barrel_side.png",
+        "barrel_top.png",
+        "barrel_top_open.png",]
 pefile=["PE Textures' Name Pattern",
         "door_acacia_lower.png",
         "door_acacia_upper.png",
         "planks_acacia.png",
         "sapling_acacia.png",
+        "acacia_trapdoor.png",
         "log_acacia.png",
         "log_acacia_top.png",
         "rail_activator.png",
@@ -46,7 +58,17 @@ pefile=["PE Textures' Name Pattern",
         "anvil_base.png",
         "ancil_top_damaged_0.png",
         "melon_stem_connected.png",
-        "pumpkin_stem_connected.png",]
+        "pumpkin_stem_connected.png",
+        "flower_houstonia.png",
+        "bamboo_leaf.png",
+        "bamboo_singleleaf.png",
+        "bamboo_small_leaf.png",
+        "bamboo_sapling.png",
+        "bamboo_stem.png",
+        "barrel_bottom.png",
+        "barrel_side.png",
+        "barrel_top.png",
+        "barrel_top_open.png",]
 
 input0=1
 error=0
@@ -56,11 +78,14 @@ print("LOGS:")
 while input0 < len(pcfile):
     try : # Try to do the following commands
         os.rename(pngdir + pcfile[input0], pngdirPE + pefile[input0])
-        print(pcfile[input0], "Successfully converted to", pefile[input0])
+        if pcfile[input0] == pefile[input0]:
+            print(bcolors.OKGREEN + "OK!", bcolors.ENDC + pcfile[input0], "Have the same name with PE texture name, no need to rename")
+        else:
+            print(bcolors.OKGREEN + "OK!", bcolors.ENDC + pcfile[input0], "Successfully converted to,", "renamed to", pefile[input0])
         input0 = input0 + 1
     except: # Keeps going even if some files is not found, also print out which file it is"
         pass
-        print(bcolors.FAIL + "ERROR!", bcolors.ENDC + "The following file:", pcfile[input0], "is not found skipped")
+        print(bcolors.FAIL + "ERROR!", bcolors.ENDC + "The following file:", pcfile[input0], "is not found, skipped")
         input0 = input0 + 1
         error = error + 1
 print("---------------------------------------------")
