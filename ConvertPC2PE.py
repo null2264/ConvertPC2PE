@@ -15,7 +15,8 @@ print(bcolors.WARNING + "WARNING!", bcolors.ENDC + "This converter cant convert 
 inPCResource = str(input("What is the folder name of the Resource Pack ? ") or "BlockinBlock")
 
 pngdir="/home/ziro/my Files/PE Port Project/" + inPCResource + "/assets/minecraft/textures/block/"
-pngdirPE="/home/ziro/my Files/PE Port Project/" + inPCResource + "PE" + "/textures/blocks/"
+inPEResource = inPCResource + "PE"
+pngdirPE="/home/ziro/my Files/PE Port Project/" + inPEResource + "/textures/blocks/"
 
 pcfile=["PC Textures' Name Patterns",
         "acacia_door_bottom.png",
@@ -42,7 +43,22 @@ pcfile=["PC Textures' Name Patterns",
         "barrel_bottom.png",
         "barrel_side.png",
         "barrel_top.png",
-        "barrel_top_open.png",]
+        "barrel_top_open.png",
+        "beacon.png",
+        "bedrock.png",
+        "bee_nest_bottom.png",
+        "bee_nest_front.png",
+        "bee_nest_front_honey.png",
+        "bee_nest_side.png",
+        "bee_nest_top.png",
+        "beehive_end.png",
+        "beehive_front.png",
+        "beehive_front_honey.png",
+        "beehive_side.png",
+        "beetroots_stage0.png",
+        "beetroots_stage1.png",
+        "beetroots_stage2.png",
+        "beetroots_stage3.png",]
 pefile=["PE Textures' Name Pattern",
         "door_acacia_lower.png",
         "door_acacia_upper.png",
@@ -68,20 +84,41 @@ pefile=["PE Textures' Name Pattern",
         "barrel_bottom.png",
         "barrel_side.png",
         "barrel_top.png",
-        "barrel_top_open.png",]
+        "barrel_top_open.png",
+        "beacon.png",
+        "bedrock.png",
+        "bee_nest_bottom.png",
+        "bee_nest_front.png",
+        "bee_nest_front_honey.png",
+        "bee_nest_side.png",
+        "bee_nest_top.png",
+        "beehive_top.png",
+        "beehive_front.png",
+        "beehive_front_honey.png",
+        "beehive_side.png",
+        "beetroots_stage_0.png",
+        "beetroots_stage_1.png",
+        "beetroots_stage_2.png",
+        "beetroots_stage_3.png",]
 
 input0=1
 error=0
 
 print("")
 print("LOGS:")
+if not os.path.exists(pngdirPE):
+    os.makedirs(pngdirPE)
+else:
+    print("Folder", inPEResource , "already exist, skipped")
+    pass
+
 while input0 < len(pcfile):
     try : # Try to do the following commands
         os.rename(pngdir + pcfile[input0], pngdirPE + pefile[input0])
         if pcfile[input0] == pefile[input0]:
             print(bcolors.OKGREEN + "OK!", bcolors.ENDC + pcfile[input0], "Have the same name with PE texture name, no need to rename")
         else:
-            print(bcolors.OKGREEN + "OK!", bcolors.ENDC + pcfile[input0], "Successfully converted to,", "renamed to", pefile[input0])
+            print(bcolors.OKGREEN + "OK!", bcolors.ENDC + pcfile[input0], "Successfully converted,", "renamed to", pefile[input0])
         input0 = input0 + 1
     except: # Keeps going even if some files is not found, also print out which file it is"
         pass
