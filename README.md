@@ -7,7 +7,7 @@ Currently only rename Blocks,
 
 Some blocks have a unique texture that really different from Pocket Edition/Bedrock Edition...
 Known unique texture:
-Leaves - Different way of making the game show its colors.
-Grass (Normal, Path, and Snow) - Same as Leaves.
-Conduit (?)
-Command Blocks - PE have extra texture called _mipmap.png maybe for inventory.
+* Leaves - Different way of making the game show its colors.
+* Grass (Normal, Path, and Snow) - Same as Leaves.
+* Conduit (?)
+* Command Blocks - PE have extra texture called _mipmap.png maybe for inventory.
